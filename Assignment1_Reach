@@ -1,0 +1,48 @@
+Saidath Ibikounle
+CEBD1160 Assignment 1
+
+Reach
+
+1:
+Write a program that reads two lists of numbers (4 items minimum) 
+ and merge them bysorting them out ignoring duplicates.
+
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
+list_2 = [0, 2, 4, 6, 8, 10, 12]
+
+inlist_2 = set(list_2) - set(list_1)
+merge = list_1 + list(inlist_2)
+merge.sort()
+print(merge)
+
+
+2:
+Improve the previous code 
+by ignoring the ones that could be written as a linear combination of any other two numbers 
+(13=2*5+1*3), so if 3 and 5 are there, you should drop 13 if seen.
+
+
+import random
+
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
+list_2 = [0, 2, 4, 6, 8, 10, 12, 13]
+
+inlist_2 = set(list_2) - set(list_1)
+merge = list_1 + list(inlist_2)
+merge.sort()
+print(merge)
+
+#Linear combination loop
+#x & y would be random numbers picked from the list
+##13=2*5+1*3
+#format z = a (x) + b (y)
+
+for a in range(20):
+    for b in range(20):
+        for i in range(5):
+            if merge[i] == ((a*random.choice(merge)) + (b*random.choice(merge))):
+                l = merge[i]
+                merge.remove(l)
+
+print(merge)
+
