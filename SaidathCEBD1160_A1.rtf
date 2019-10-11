@@ -1,0 +1,212 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 # CEBD1160-Assignment1\
+# Saidath Ibikounle\
+\
+BASIC :\
+\
+1 :\
+Check what's the type of the following values in the python:\
+\
+\
+1 - Integer\
+3.14 - Float\
+"Big Data!" - String\
+'Big Data!' - String\
+True - Boolean\
+False - Boolean\
+[1,2,"intruder",3] - List\
+\
+\
+\
+2 :\
+Write a script that prints the integers from 1 to 100. \
+For multiples of three print "Fizz" instead, and for the multiples of five print "Buzz". \
+For numbers which are multiples of both print"FizzBuzz".\
+\
+\
+for i in range(100): #Loop for numbers 1-100\
+    integer = i + 1\
+    print(integer)\
+    if((integer % 3 == 0) and (integer % 5 == 0)):\
+        print('FizzBuzz')\
+        continue\
+    elif(integer % 3 == 0):\
+        print('Fizz')\
+        continue\
+    elif(integer % 5 ==0):\
+        print('Buzz')\
+        continue\
+\
+\
+\
+3 :\
+Could you find the maximum or minimum integer value in a list. \
+If we list all the naturalnumbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. \
+The sum of thesemultiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.\
+\
+\
+\
+\
+Numbers = list(range(1,1001))\
+Multiples = []\
+sumofmultiples = 0\
+\
+print('The smallest integer value in the list is ' + str(min(Numbers)))\
+print('The largest integer value in the list is ' + str(max(Numbers)))\
+\
+for i in range(1,1000): #Test the multiples\
+    if(i % 3 == 0):\
+        Multiples.append(i)\
+\
+    elif(i % 5 ==0):\
+        Multiples.append(i)\
+        \
+for a in range(len(Multiples)): # Add the multiples lower than 1000\
+    sumofmultiples = sumofmultiples + Multiples[a]\
+    \
+print('The sum of all the multiples of 3 or 5 below 1000 is ' + str(sumofmultiples) + '.')\
+ \
+\
+   \
+    \
+4 : \
+Write a script that takes out all the vowels and response with shortened version the string.\
+Your script should not be case sensitive.\
+\
+\
+\
+vowels = ['a', 'e', 'i', 'o', 'u']\
+\
+print('Type in a word')\
+word = input()\
+wordlist = list(word) # Convert string to list.\
+\
+for letter in word:\
+    if letter in vowels:\
+        wordlist.remove(letter)\
+print('The shortened version is: ' + ''.join(wordlist)) # Convert list to string.\
+\
+\
+\
+ADVANCE :\
+\
+  \
+  1 :\
+  Write a Python program to count the number of characters (character frequency) in a string.\
+  The expected results are two options: [Example: Babak Khosravifar]\
+  \uc0\u9675 Sorted by alphabetical order [\{\'91a\'92:4, \'91b\'92:2, \'91f\'92:1, \'91i\'92:1, .....\}]\
+  \uc0\u9675 Sorted by the repetition of characters in descending order [\{\'91a\'92:4, \'91b\'92:2, \'91k\'92:2, \'91r\'92:2,.....\}]2\
+ \
+ \
+\
+print('Type in a word')\
+word = input()\
+wordlist = list(word) # Convert string to list.\
+wordlist.sort()\
+\
+frequency = \{\}\
+\
+for i in wordlist: \
+    if i in frequency: \
+        frequency[i] += 1 ## Add up to the letter count\
+    else: \
+        frequency[i] = 1\
+\
+print(frequency)\
+\
+\
+ \
+2 :\
+Write a Python program to count the occurrences of each word in a given sentence.\
+\
+\
+\
+print('Type in a word')\
+sentence = input()\
+sentence = str.split(sentence) #Split the sentence into words\
+\
+counts = \{\}\
+\
+for i in sentence:\
+    if i in counts:\
+        counts[i] += 1\
+    else:\
+        counts[i] = 1\
+            \
+print(counts)\
+\
+\
+\
+3 : \
+Write a Python program that accepts a comma separated sequence of words as input \
+and prints the unique words in sorted form (alphanumerically).\
+\
+\
+print('Enter a comma separated sequence of words')\
+sequence = input()\
+sequence = str.split(sequence)\
+sequence.sort()\
+\
+print(sequence)\
+\
+\
+\
+\
+REACH :\
+\
+1:\
+Write a program that reads two lists of numbers (4 items minimum) \
+ and merge them bysorting them out ignoring duplicates.\
+\
+\
+\
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8 , 9]\
+list_2 = [0, 2, 4, 6, 8, 10, 12]\
+\
+inlist_2 = set(list_2) - set(list_1)\
+merge = list_1 + list(inlist_2)\
+merge.sort()\
+print(merge)\
+\
+\
+\
+\
+2:\
+Improve the previous code \
+by ignoring the ones that could be written as a linear combination of any other two numbers \
+(13=2*5+1*3), so if 3 and 5 are there, you should drop 13 if seen.\
+\
+\
+\
+import random\
+\
+list_1 = [1, 2, 3, 4, 5, 6, 7, 8 , 9]\
+list_2 = [0, 2, 4, 6, 8, 10, 12, 13]\
+\
+inlist_2 = set(list_2) - set(list_1)\
+merge = list_1 + list(inlist_2)\
+merge.sort()\
+print(merge)\
+\
+#Linear combination loop\
+#x & y would be random numbers picked from the list\
+##13=2*5+1*3\
+#format z = a (x) + b (y)\
+\
+for a in range(20):\
+    for b in range(20):\
+        for i in range(5):\
+            if merge[i] == ((a*random.choice(merge)) + (b*random.choice(merge))):\
+                l = merge[i]\
+                merge.remove(l)\
+\
+print(merge)\
+\
+\
+}
