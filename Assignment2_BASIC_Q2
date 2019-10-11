@@ -1,0 +1,17 @@
+Saidath Ibikounle
+CEBD 1160 Assignment #2 
+BASIC
+Question 2 :
+Write a function that takes an ordered list of numbers (a list where the elements are in
+order from smallest to largest) and another number. The function decides whether or not
+the given number is inside the list and returns (then prints) an appropriate boolean.
+
+
+def inList(list_1, number):
+    if number in list_1:
+        return('True') # Show true if the number is in the list.
+    else:
+        return('False') # Show false if the number is in the list.
+       
+# Calling the function:
+print(singleList([1,2,3,5,9,14,20], 10))
