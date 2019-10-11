@@ -1,0 +1,19 @@
+Saidath Ibikounle
+CEBD 1160 Assignment #2 
+BASIC
+
+Question 1 :
+Write a program (function!) that takes a list and returns a new list that contains all the
+elements of the first list minus all the duplicates.
+
+
+def singleList(x):
+    y = []
+    for i in x:  # For every element in list x,
+        if i not in y:  # if that element is not in list y,
+            y.append(i)  # then add it to list y.
+   
+    return y
+
+#Calling the function:
+print(singleList([1,2,2,2,3,5,5,5,7,9,10]))
