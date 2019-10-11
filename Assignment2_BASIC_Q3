@@ -1,0 +1,15 @@
+Saidath Ibikounle
+CEBD 1160 Assignment #2 
+BASIC
+Question 3 :
+Let’s say I give you a list saved in a variable: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100].
+Write one line of Python that takes this list a and makes a new list that has only the even
+elements of this list in it.
+
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# If a number in list “a” is divisible by 2 with no remainders i.e even,
+# add n to the new list “b”.
+b = [n for n in a if n%2 == 0] 
+    
+print(b)
+    
