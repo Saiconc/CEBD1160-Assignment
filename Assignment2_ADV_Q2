@@ -1,0 +1,34 @@
+#Saidath Ibikounle - CEBD 1160 Assignment #2 
+#ADVANCED Question 2 :
+
+#Function to guess a user input number.
+
+from random import* #Random is imported in order to be used.
+
+def FunctionGuess(): 
+    #Number picked by user.
+    print('Pick an integer between 0 and 200.')
+    Usernumber = int(input())
+    
+    # Generate random integers between 0 & 200.
+    fNumber = randint(0,200)
+    
+    if fNumber == Usernumber:
+        return('Bigo')
+    
+    #When the number gernerated is higher:
+    while fNumber > Usernumber :
+        fNumber = fNumber - 1
+        print('Number is lower. Getting closer.')
+        if fNumber == Usernumber:
+            return('Bigo')
+
+    #When the number gernerated is lower:
+    while fNumber < Usernumber :  
+        fNumber = fNumber + 1
+        print('Number is higher. Getting closer.')
+        if fNumber == Usernumber:
+            return('Bigo')
+        
+        
+print(FunctionGuess())
