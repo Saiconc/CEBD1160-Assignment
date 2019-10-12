@@ -1,0 +1,67 @@
+#Saidath Ibikounle - CEBD 1160 Assignment #2 
+#ADVANCED Question 4 :
+
+#Function to guess a user input number with hints (odd/even) and limited input times.
+
+import random #Random is imported in order to be used.
+
+#Function to test whether a number is even/odd.
+def isEven(n):
+    if n % 2 == 0: #Even.
+        return(0)
+    else: #Odd.
+        return(1)
+
+
+def FunctionGuess_2(): 
+    #Number picked by user.
+    print('Pick an integer between 0 and 200.')
+    Usernumber = int(input())
+    
+    for i in range(10):
+        
+        if Usernumber >= 100:   #From 100
+            if isEven(Usernumber) == 0 : #Even
+                fNumber = random.randrange(100,Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+                
+            elif isEven(Usernumber) == 1 : #Odd
+                fNumber = random.randrange(101,Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+
+        if Usernumber < 100 and Usernumber > 50 :   #Between 50 & 100.
+            if isEven(Usernumber) == 0 : #Even
+                fNumber = random.randrange(52, Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+          
+                
+            elif isEven(Usernumber) == 1 : #Odd
+                fNumber = random.randrange(51,Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+        
+        if Usernumber >= 0 and Usernumber <= 50 : #Between 0 & (including) 50.
+            if isEven(Usernumber) == 0 : #Even
+                fNumber = random.randrange(0,Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+                
+            elif isEven(Usernumber) == 1 : #Odd
+                fNumber = random.randrange(1,Usernumber+1,2)
+                if fNumber == Usernumber:
+                    print('Bigo')
+                    break
+        #If it does not guess the number.   
+        if i == 9:
+            print("Could not guess the number.")
+            
+            
+FunctionGuess_2()
