@@ -1,0 +1,57 @@
+#Saidath Ibikounle - CEBD 1160 Assignment #2 
+#ADVANCED Question 1 :
+
+#Function to guess a correct number generated.
+
+from random import* #Random is imported in order to be used.
+
+def GuessNumber(): 
+    # Generate random integers between 0 & 200.
+    functionNumber = randint(0,200)
+    
+    #Number picked by user.
+    print('Pick an integer between 1 and 200.')
+    Usernumber = input()
+    
+    x = int(Usernumber) - int(functionNumber)
+    
+    print(functionNumber)
+
+    if Usernumber == functionNumber :
+        return('Bigo')
+    
+    while Usernumber != functionNumber:
+        #Number picked by user.
+        print('Pick another integer between 1 and 200.')
+        Usernumber = input()
+        
+        x = int(Usernumber) - int(functionNumber)
+
+        
+        if ((x >= (-10) and x < 0) or (x > 0 and x <= 10)): #If they are 10 numbers apart
+            print('Close')
+        
+        #The number picked by user is higher than the number generated:
+        #when the difference is greater than 99.
+        elif x >= 100 : 
+            print('Way Upper')
+        
+        #When the difference is between 10 & 100
+        elif x > 10 and x < 100 :
+            print('Upper')
+    
+        #The number generated is higher than the number picked by user:
+        #When the difference is between 10 & 100.
+        elif x < -10 and x > (-100) :
+            print('Lower')
+        
+        #When the difference is greater than 99.
+        elif x <= (-100) :
+            print('Way Lower')
+        
+        elif x == 0:
+            return('Bigo')
+            break
+
+
+print(GuessNumber())
