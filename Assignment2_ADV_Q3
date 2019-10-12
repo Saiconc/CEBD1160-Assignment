@@ -1,0 +1,72 @@
+#Saidath Ibikounle - CEBD 1160 Assignment #2 
+#ADVANCED Question 3 :
+
+#Function to guess a correct number generated with hints and limited tries.
+
+
+from random import* #Random is imported in order to be used.
+
+#Function to test whether a number is even/odd.
+def isEven(n):
+    if n % 2 == 0: #Even.
+        print("The Number generated is even.")
+    else: #Odd.
+        print("The Number generated is odd.")
+
+
+#Function to test whether a number is divisible by 3.
+def divisible3(m):
+    if m % 3 == 0:
+        print("The Number generated is divisble by 3.")
+    else:
+        print("The Number generated is not divisible by 3.")
+    
+    
+    
+def GuessNumber_2(): 
+    # Generate random integers between 0 & 200.
+    functionNumber = randint(0,200)
+
+    for i in range(5):
+        
+        #Number picked by user.
+        print('Pick another integer between 1 and 200.')
+        Usernumber = input()
+        
+        x = int(Usernumber) - int(functionNumber)
+        
+        if ((x >= (-10) and x < 0) or (x > 0 and x <= 10)): #If they are 10 numbers apart
+            print('Close')
+        
+        #The number picked by user is higher than the number generated:
+        #when the difference is greater than 99.
+        elif x >= 100 : 
+            print('Way Upper')
+        
+        #When the difference is between 10 & 100
+        elif x > 10 and x < 100 :
+            print('Upper')
+    
+        #The number generated is higher than the number picked by user:
+        #When the difference is between 10 & 100.
+        elif x < -10 and x > (-100) :
+            print('Lower')
+        
+        #When the difference is greater than 99.
+        elif x <= (-100) :
+            print('Way Lower')
+        
+        elif x == 0: #If the numbers are equal.
+            return('Bigo')
+            break
+        
+        #Hints:
+        #Give the even/odd hint after the second try.
+        if (i == 1) and ((x > (-100) and x < 0) or (x > 0 and x < 100)):
+            isEven(functionNumber)
+        #Give the disible by 3 hint after the fourth try.
+        elif (i == 3) and ((x > (-100) and x < 0) or (x > 0 and x < 100)):
+            divisible3(functionNumber)
+            
+
+print(GuessNumber_2())
